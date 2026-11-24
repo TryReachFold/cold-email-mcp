@@ -1,0 +1,4 @@
+openai.com
+example.com
+not_a_domain
+acme.test

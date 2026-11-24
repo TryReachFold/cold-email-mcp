@@ -1,0 +1,99 @@
+{
+  "description": "Expected email permutations, derived from the web tool at tryreachfold.com/tools/email-permutation-generator: lowercase + Cyrillic transliteration, keep [a-z -], 12 patterns in order, duplicate local parts dropped, domain cleaned of scheme/@/path.",
+  "cases": [
+    {
+      "name": "latin_with_domain",
+      "first": "Jane",
+      "last": "Doe",
+      "domain": "acme.com",
+      "expected": [
+        "jane@acme.com",
+        "doe@acme.com",
+        "jane.doe@acme.com",
+        "janedoe@acme.com",
+        "jane_doe@acme.com",
+        "jane-doe@acme.com",
+        "j.doe@acme.com",
+        "ja.doe@acme.com",
+        "janed@acme.com",
+        "jane.d@acme.com",
+        "doe.jane@acme.com",
+        "djane@acme.com"
+      ]
+    },
+    {
+      "name": "cyrillic_no_domain",
+      "first": "Иван",
+      "last": "Пётр",
+      "domain": "",
+      "expected": [
+        "ivan",
+        "petr",
+        "ivan.petr",
+        "ivanpetr",
+        "ivan_petr",
+        "ivan-petr",
+        "i.petr",
+        "iv.petr",
+        "ivanp",
+        "ivan.p",
+        "petr.ivan",
+        "pivan"
+      ]
+    },
+    {
+      "name": "cleaned_name_and_domain",
+      "first": "  Anne-Marie ",
+      "last": "O'Brien",
+      "domain": "https://Example.com/careers",
+      "expected": [
+        "anne-marie@example.com",
+        "obrien@example.com",
+        "anne-marie.obrien@example.com",
+        "anne-marieobrien@example.com",
+        "anne-marie_obrien@example.com",
+        "anne-marie-obrien@example.com",
+        "a.obrien@example.com",
+        "an.obrien@example.com",
+        "anne-marieo@example.com",
+        "anne-marie.o@example.com",
+        "obrien.anne-marie@example.com",
+        "oanne-marie@example.com"
+      ]
+    },
+    {
+      "name": "single_letters_dedupe",
+      "first": "A",
+      "last": "B",
+      "domain": "",
+      "expected": [
+        "a",
+        "b",
+        "a.b",
+        "ab",
+        "a_b",
+        "a-b",
+        "b.a",
+        "ba"
+      ]
+    },
+    {
+      "name": "cyrillic_special_letters",
+      "first": "Ы",
+      "last": "Ёлка",
+      "domain": "",
+      "expected": [
+        "y",
+        "elka",
+        "y.elka",
+        "yelka",
+        "y_elka",
+        "y-elka",
+        "ye",
+        "y.e",
+        "elka.y",
+        "ey"
+      ]
+    }
+  ]
+}

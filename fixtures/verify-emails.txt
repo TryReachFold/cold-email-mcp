@@ -1,0 +1,5 @@
+test@gmail.com
+info@acme.com
+someone@mailinator.com
+not-an-email
+first.last@example.com

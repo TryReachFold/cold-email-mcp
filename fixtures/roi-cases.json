@@ -1,0 +1,62 @@
+{
+  "comment": "ROI calculator inputs only. Expected outputs are generated from the Node port (hand-checked against the web calculator defaults) by scripts outside the packages; both packages must reproduce them exactly.",
+  "cases": [
+    {
+      "name": "defaults",
+      "inputs": {}
+    },
+    {
+      "name": "agency_plan",
+      "inputs": {
+        "meetings": "25",
+        "deal-value": "12500",
+        "reply-rate": "2",
+        "plan": "agency",
+        "sdr-cost": "72000",
+        "agency-per-meeting": "300",
+        "daily-limit": "50",
+        "sending-days": "6",
+        "inbox-cost": "4.5"
+      }
+    },
+    {
+      "name": "minimum_target",
+      "inputs": {
+        "meetings": "1",
+        "deal-value": "500",
+        "sequence-length": "1",
+        "reply-rate": "8",
+        "reply-to-meeting": "60",
+        "close-rate": "60",
+        "sdr-meetings": "30",
+        "sdr-cost": "30000",
+        "agency-per-meeting": "50",
+        "plan": "starter",
+        "domain-cost": "5",
+        "inbox-cost": "1",
+        "daily-limit": "20",
+        "inboxes-per-domain": "1",
+        "sending-days": "4"
+      }
+    },
+    {
+      "name": "heavy_target",
+      "inputs": {
+        "meetings": "100",
+        "reply-rate": "0.5",
+        "sequence-length": "8",
+        "reply-to-meeting": "5",
+        "close-rate": "5",
+        "sdr-meetings": "2",
+        "sdr-cost": "150000",
+        "agency-per-meeting": "1000",
+        "plan": "scale",
+        "domain-cost": "30",
+        "inbox-cost": "10",
+        "daily-limit": "50",
+        "inboxes-per-domain": "4",
+        "sending-days": "6"
+      }
+    }
+  ]
+}

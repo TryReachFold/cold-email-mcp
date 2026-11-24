@@ -1,0 +1,9 @@
+Subject: line, one blank line, then the body.
+Without the blank line the whole file is the body.
+
+Dear Friend,
+
+ACT NOW — this limited time offer is 100% risk free!
+Click here to buy now and make money fast!!!
+
+Visit https://example.com/1 https://example.com/2 https://example.com/3 https://example.com/4

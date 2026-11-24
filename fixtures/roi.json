@@ -1,0 +1,273 @@
+{
+  "cases": [
+    {
+      "name": "defaults",
+      "inputs": {},
+      "expected": {
+        "inputs": {
+          "meetings_per_month": 10,
+          "deal_value": 5000,
+          "sequence_length": 4,
+          "reply_rate_pct": 1.5,
+          "reply_to_meeting_pct": 25,
+          "close_rate_pct": 20,
+          "sdr_meetings_per_month": 8,
+          "sdr_cost_per_year": 65000,
+          "agency_price_per_meeting": 250,
+          "plan": "growth",
+          "plan_price_per_month": 139,
+          "domain_cost": 13,
+          "inbox_cost": 3.5,
+          "daily_limit_per_inbox": 40,
+          "inboxes_per_domain": 2,
+          "sending_days_per_week": 5,
+          "warmup_buffer": 1.5
+        },
+        "emails_per_month": 2666.666666666667,
+        "leads_per_month": 666.6666666666667,
+        "emails_per_sending_day": 123.17167051578139,
+        "domains": 5,
+        "inboxes": 10,
+        "daily_capacity": 400,
+        "replies_per_month": 40,
+        "closed_deals_per_month": 2,
+        "revenue_per_month": 10000,
+        "sdrs_needed": 2,
+        "infra_per_month": 40.416666666666664,
+        "routes": [
+          {
+            "name": "In-house SDR",
+            "monthly": 10833.333333333334,
+            "per_meeting": 1083.3333333333335,
+            "cac": 5416.666666666667
+          },
+          {
+            "name": "Lead agency",
+            "monthly": 2500,
+            "per_meeting": 250,
+            "cac": 1250
+          },
+          {
+            "name": "Reachfold",
+            "monthly": 179.41666666666666,
+            "per_meeting": 17.941666666666666,
+            "cac": 89.70833333333333
+          }
+        ],
+        "booked_deal_value_per_year": 600000
+      }
+    },
+    {
+      "name": "agency_plan",
+      "inputs": {
+        "meetings": "25",
+        "deal-value": "12500",
+        "reply-rate": "2",
+        "plan": "agency",
+        "sdr-cost": "72000",
+        "agency-per-meeting": "300",
+        "daily-limit": "50",
+        "sending-days": "6",
+        "inbox-cost": "4.5"
+      },
+      "expected": {
+        "inputs": {
+          "meetings_per_month": 25,
+          "deal_value": 12500,
+          "sequence_length": 4,
+          "reply_rate_pct": 2,
+          "reply_to_meeting_pct": 25,
+          "close_rate_pct": 20,
+          "sdr_meetings_per_month": 8,
+          "sdr_cost_per_year": 72000,
+          "agency_price_per_meeting": 300,
+          "plan": "agency",
+          "plan_price_per_month": 549,
+          "domain_cost": 13,
+          "inbox_cost": 4.5,
+          "daily_limit_per_inbox": 50,
+          "inboxes_per_domain": 2,
+          "sending_days_per_week": 6,
+          "warmup_buffer": 1.5
+        },
+        "emails_per_month": 5000,
+        "leads_per_month": 1250,
+        "emails_per_sending_day": 192.4557351809084,
+        "domains": 6,
+        "inboxes": 12,
+        "daily_capacity": 600,
+        "replies_per_month": 100,
+        "closed_deals_per_month": 5,
+        "revenue_per_month": 62500,
+        "sdrs_needed": 4,
+        "infra_per_month": 60.5,
+        "routes": [
+          {
+            "name": "In-house SDR",
+            "monthly": 24000,
+            "per_meeting": 960,
+            "cac": 4800
+          },
+          {
+            "name": "Lead agency",
+            "monthly": 7500,
+            "per_meeting": 300,
+            "cac": 1500
+          },
+          {
+            "name": "Reachfold",
+            "monthly": 609.5,
+            "per_meeting": 24.38,
+            "cac": 121.9
+          }
+        ],
+        "booked_deal_value_per_year": 3750000
+      }
+    },
+    {
+      "name": "minimum_target",
+      "inputs": {
+        "meetings": "1",
+        "deal-value": "500",
+        "sequence-length": "1",
+        "reply-rate": "8",
+        "reply-to-meeting": "60",
+        "close-rate": "60",
+        "sdr-meetings": "30",
+        "sdr-cost": "30000",
+        "agency-per-meeting": "50",
+        "plan": "starter",
+        "domain-cost": "5",
+        "inbox-cost": "1",
+        "daily-limit": "20",
+        "inboxes-per-domain": "1",
+        "sending-days": "4"
+      },
+      "expected": {
+        "inputs": {
+          "meetings_per_month": 1,
+          "deal_value": 500,
+          "sequence_length": 1,
+          "reply_rate_pct": 8,
+          "reply_to_meeting_pct": 60,
+          "close_rate_pct": 60,
+          "sdr_meetings_per_month": 30,
+          "sdr_cost_per_year": 30000,
+          "agency_price_per_meeting": 50,
+          "plan": "starter",
+          "plan_price_per_month": 59,
+          "domain_cost": 5,
+          "inbox_cost": 1,
+          "daily_limit_per_inbox": 20,
+          "inboxes_per_domain": 1,
+          "sending_days_per_week": 4,
+          "warmup_buffer": 1.5
+        },
+        "emails_per_month": 20.833333333333332,
+        "leads_per_month": 20.833333333333332,
+        "emails_per_sending_day": 1.2028483448806773,
+        "domains": 1,
+        "inboxes": 1,
+        "daily_capacity": 20,
+        "replies_per_month": 1.6666666666666665,
+        "closed_deals_per_month": 0.6,
+        "revenue_per_month": 300,
+        "sdrs_needed": 1,
+        "infra_per_month": 1.4166666666666667,
+        "routes": [
+          {
+            "name": "In-house SDR",
+            "monthly": 2500,
+            "per_meeting": 2500,
+            "cac": 4166.666666666667
+          },
+          {
+            "name": "Lead agency",
+            "monthly": 50,
+            "per_meeting": 50,
+            "cac": 83.33333333333334
+          },
+          {
+            "name": "Reachfold",
+            "monthly": 60.416666666666664,
+            "per_meeting": 60.416666666666664,
+            "cac": 100.69444444444444
+          }
+        ],
+        "booked_deal_value_per_year": 6000
+      }
+    },
+    {
+      "name": "heavy_target",
+      "inputs": {
+        "meetings": "100",
+        "reply-rate": "0.5",
+        "sequence-length": "8",
+        "reply-to-meeting": "5",
+        "close-rate": "5",
+        "sdr-meetings": "2",
+        "sdr-cost": "150000",
+        "agency-per-meeting": "1000",
+        "plan": "scale",
+        "domain-cost": "30",
+        "inbox-cost": "10",
+        "daily-limit": "50",
+        "inboxes-per-domain": "4",
+        "sending-days": "6"
+      },
+      "expected": {
+        "inputs": {
+          "meetings_per_month": 100,
+          "deal_value": 5000,
+          "sequence_length": 8,
+          "reply_rate_pct": 0.5,
+          "reply_to_meeting_pct": 5,
+          "close_rate_pct": 5,
+          "sdr_meetings_per_month": 2,
+          "sdr_cost_per_year": 150000,
+          "agency_price_per_meeting": 1000,
+          "plan": "scale",
+          "plan_price_per_month": 274,
+          "domain_cost": 30,
+          "inbox_cost": 10,
+          "daily_limit_per_inbox": 50,
+          "inboxes_per_domain": 4,
+          "sending_days_per_week": 6,
+          "warmup_buffer": 1.5
+        },
+        "emails_per_month": 400000,
+        "leads_per_month": 50000,
+        "emails_per_sending_day": 15396.458814472671,
+        "domains": 462,
+        "inboxes": 1848,
+        "daily_capacity": 92400,
+        "replies_per_month": 2000,
+        "closed_deals_per_month": 5,
+        "revenue_per_month": 25000,
+        "sdrs_needed": 50,
+        "infra_per_month": 19635,
+        "routes": [
+          {
+            "name": "In-house SDR",
+            "monthly": 625000,
+            "per_meeting": 6250,
+            "cac": 125000
+          },
+          {
+            "name": "Lead agency",
+            "monthly": 100000,
+            "per_meeting": 1000,
+            "cac": 20000
+          },
+          {
+            "name": "Reachfold",
+            "monthly": 19909,
+            "per_meeting": 199.09,
+            "cac": 3981.8
+          }
+        ],
+        "booked_deal_value_per_year": 6000000
+      }
+    }
+  ]
+}
