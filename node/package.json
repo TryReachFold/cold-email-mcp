@@ -1,0 +1,39 @@
+{
+  "name": "cold-email-mcp",
+  "version": "0.1.0",
+  "description": "CLI for the Reachfold free outbound tools: email verifier, DNS deliverability audit, spam score, email permutations and an outbound ROI calculator.",
+  "type": "module",
+  "bin": {
+    "cold-email-mcp": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "cli",
+    "cold-email",
+    "deliverability",
+    "dkim",
+    "dmarc",
+    "dns",
+    "email",
+    "outbound",
+    "spam",
+    "spf",
+    "verify"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && tsc -p tsconfig.test.json && node --test \".test-build/tests/*.test.js\"",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "license": "Apache-2.0"
+}
