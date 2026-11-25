@@ -1,6 +1,6 @@
 # cold-email-mcp
 
-**Give any AI agent — or your terminal — the cold-email checks that decide whether a campaign is heard at all.** An MCP server (hosted and local stdio) plus a CLI, free, no signup.
+**Give any AI agent — or your terminal — the cold-email checks that decide whether a campaign is heard at all.** An MCP server (hosted and local stdio) plus a CLI, free, no signup. An MCP server (hosted and local stdio) plus a CLI, free, no signup.
 
 Most cold campaigns fail before a single line of copy is written: an SPF record over its DNS-lookup limit, a two-week-old domain, a draft full of filter bait, an address that never existed. This project puts those checks where you already work — Claude, Cursor, or any Model Context Protocol client — and in plain `npx` / `uvx` one-liners.
 
