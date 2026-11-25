@@ -1,0 +1,30 @@
+{
+  "name": "cold-email-mcp-server",
+  "version": "0.1.0",
+  "description": "Local stdio MCP server for the five free cold-email checks by Reachfold: domain deliverability audit, email verification, spam score, address permutations, outreach ROI.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryReachFold/cold-email-mcp.git",
+    "directory": "mcp"
+  },
+  "bin": {
+    "cold-email-mcp-server": "dist/server.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node test/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

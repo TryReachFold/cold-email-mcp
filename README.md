@@ -1,14 +1,14 @@
 # cold-email-mcp
 
-**Give any AI agent — or your terminal — the cold-email checks that decide whether a campaign is heard at all.**
+**Give any AI agent — or your terminal — the cold-email checks that decide whether a campaign is heard at all.** An MCP server (hosted and local stdio) plus a CLI, free, no signup.
 
 Most cold campaigns fail before a single line of copy is written: an SPF record over its DNS-lookup limit, a two-week-old domain, a draft full of filter bait, an address that never existed. This project puts those checks where you already work — Claude, Cursor, or any Model Context Protocol client — and in plain `npx` / `uvx` one-liners.
 
 Free, no signup, no API key. Built by [Reachfold](https://tryreachfold.com), a cold outreach platform in pre-launch; the hosted tools have been running at [tryreachfold.com/tools](https://tryreachfold.com/tools) since day one.
 
-## Connect
+## Connect — three ways
 
-**MCP (Claude Code, Cursor, any MCP client):**
+**1. Hosted MCP server (remote, zero setup)** — for Claude Code, Cursor, and any MCP client:
 
 ```sh
 claude mcp add --transport http cold-email-mcp https://tryreachfold.com/api/mcp
@@ -16,14 +16,28 @@ claude mcp add --transport http cold-email-mcp https://tryreachfold.com/api/mcp
 
 Remote Streamable HTTP, stateless, no authentication. The agent gets five tools and can audit a prospect's domain, sanity-check a draft, or run outreach math inside the conversation.
 
-**CLI (same five checks in a pipeline):**
+**2. Local MCP server (stdio, in this repo)** — for Claude Desktop and clients that prefer a local process:
+
+```sh
+cd mcp && npm install && npm run build
+```
+
+Then point your client at the built server, e.g. in `claude_desktop_config.json`:
+
+```json
+{ "mcpServers": { "cold-email-mcp": { "command": "node", "args": ["/absolute/path/to/cold-email-mcp/mcp/dist/server.js"] } } }
+```
+
+Same five tools (`audit_domain`, `verify_email`, `score_email`, `generate_email_permutations`, `calculate_outbound_roi`); network tools call the public API, permutations and ROI run fully offline. Implementation: [`mcp/`](mcp/) on the MCP TypeScript SDK v2.
+
+**3. CLI (same five checks in a pipeline):**
 
 ```sh
 npx cold-email-mcp audit openai.com        # Node.js 20+
 uvx cold-email-mcp verify jane@acme.com    # Python 3.10+
 ```
 
-Two independent implementations, same contract, parity-tested against the web tools: [`node/`](node/) (TypeScript, zero runtime dependencies) and [`python/`](python/) (stdlib only).
+CLI implementations: [`node/`](node/) (TypeScript, zero runtime dependencies) and [`python/`](python/) (stdlib only), parity-tested against the web tools.
 
 ## What your agent can do with it
 
